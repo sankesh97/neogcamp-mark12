@@ -15,7 +15,7 @@ const Hf = () => {
   };
   return (
     <>
-      <h1>Hypotenuse Finder 😉</h1>
+      <h1>Hypotenuse Finder 👀</h1>
       <input type="number" ref={sideOne} placeholder="Side One"></input>
       <input type="number" ref={sideTwo} placeholder="Side Two"></input>
       <br />
