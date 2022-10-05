@@ -1,4 +1,5 @@
 import { useState } from "react";
+import parse from "html-react-parser";
 
 const Quij = () => {
   const QueBank = [
@@ -64,7 +65,7 @@ const Quij = () => {
       {QueBank.map((ele) => {
         return (
           <div key={ele.name}>
-            <p dangerouslySetInnerHTML={{ __html: ele.question }}></p>
+            <p>{parse(ele.question)}</p>
             <input
               type="radio"
               id={ele.options[0]}
@@ -72,10 +73,7 @@ const Quij = () => {
               value={ele.options[0]}
               onChange={answersChecker}
             />
-            <label
-              htmlFor={ele.options[0]}
-              dangerouslySetInnerHTML={{ __html: ele.options[0] }}
-            ></label>
+            <label htmlFor={ele.options[0]}>{parse(ele.options[0])}</label>
             <input
               type="radio"
               id={ele.options[1]}
@@ -83,10 +81,7 @@ const Quij = () => {
               value={ele.options[1]}
               onChange={answersChecker}
             />
-            <label
-              htmlFor={ele.options[1]}
-              dangerouslySetInnerHTML={{ __html: ele.options[1] }}
-            ></label>
+            <label htmlFor={ele.options[1]}>{parse(ele.options[1])}</label>
             <input
               type="radio"
               id={ele.options[2]}
@@ -94,10 +89,7 @@ const Quij = () => {
               value={ele.options[2]}
               onChange={answersChecker}
             />
-            <label
-              htmlFor={ele.options[2]}
-              dangerouslySetInnerHTML={{ __html: ele.options[2] }}
-            ></label>
+            <label htmlFor={ele.options[2]}>{parse(ele.options[2])}</label>
           </div>
         );
       })}
